@@ -1,0 +1,276 @@
+/* style.css - Estilo do site Macrotech */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f7f9fb;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Evita imagens estourarem */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+/* ================= HEADER ================= */
+
+header {
+  background-color: #1b2a4e;
+  margin: 10px;
+  color: white;
+  padding: 10px 0;
+  border-radius: 20px;
+}
+
+/* CENTRALIZA A LOGO */
+.header-flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.header-center {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* Menu */
+.header-right nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.header-right nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Logo */
+.logo {
+  height: 220px;
+  object-fit: contain;
+}
+
+/* ================= HERO ================= */
+
+.hero {
+  background: #0f172a;
+  color: white;
+  margin: 10px;
+  padding: 60px 20px;
+  text-align: center;
+  border-radius: 20px;
+}
+
+.hero h2 {
+  font-size: clamp(24px, 5vw, 32px);
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+/* ================= BOTÕES ================= */
+
+.btn {
+  position: relative;
+  display: inline-block;
+  padding: 10px 16px;
+  background-color: #3b82f6;
+  color: white;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+/* animação brilho */
+.btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.6),
+    rgba(255, 255, 255, 0.1)
+  );
+  transform: skewX(-20deg);
+}
+
+.btn:hover::before {
+  animation: brilhoPassando 0.7s forwards;
+}
+
+@keyframes brilhoPassando {
+  from { left: -75%; }
+  to { left: 125%; }
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+/* ================= SEÇÕES ================= */
+
+.sobre {
+  background: white;
+  padding: 40px 20px;
+}
+
+.servicos {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.card {
+  background: #f1f5f9;
+  padding: 20px;
+  border-radius: 8px;
+  flex: 1;
+  min-width: 250px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* ================= PRODUTOS ================= */
+
+.produtos {
+  padding: 40px 20px;
+  background-color: #ffffff;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.produto {
+  background: #f1f5f9;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.produto img {
+  max-width: 150px;
+  margin: 0 auto 10px;
+  display: block;
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+  background: #1b2a4e;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 15px;
+  margin: 10px;
+  border-radius: 20px;
+}
+
+/* ================= WHATSAPP FLUTUANTE ================= */
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background-color: #25d366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 999;
+}
+
+.whatsapp-float img {
+  width: 32px;
+  height: 32px;
+}
+
+/* ================= RESPONSIVO (CELULAR) ================= */
+
+@media (max-width: 768px) {
+
+  header {
+    position: relative;
+  }
+
+  .logo {
+    height: 120px;
+  }
+
+  .header-right nav ul {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .hero {
+    padding: 40px 15px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .btn {
+    padding: 12px 18px;
+    font-size: 16px;
+  }
+
+  .servicos {
+    flex-direction: column;
+  }
+
+  footer {
+    font-size: 14px;
+  }
+
+
+
+  .btn {
+    padding: 12px 18px;
+    font-size: 16px;
+  }
+
+  .servicos {
+    flex-direction: column;
+  }
+
+  footer {
+    font-size: 14px;
+  }
+}
