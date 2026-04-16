@@ -202,22 +202,32 @@ footer {
 
 .whatsapp-float {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 60px;
-  height: 60px;
-  background-color: #25d366;
-  border-radius: 50%;
+  bottom: 10px;
+  right: 70px;
+  background: #25D366;
+  color: #fff;
   display: flex;
   align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  z-index: 999;
+  gap: 10px;
+  padding: 5px 14px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+  z-index: 9999;
 }
 
 .whatsapp-float img {
-  width: 32px;
-  height: 32px;
+  width: 24px;
+  height: 24px;
+}
+
+.whatsapp-float:hover {
+  background: #1ebe5d;
+  transform: scale(1.05);
 }
 
 /* ================= RESPONSIVO (CELULAR) ================= */
